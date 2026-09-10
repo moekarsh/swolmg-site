@@ -1,0 +1,408 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SWOL manages Facebook, Instagram, LinkedIn and Google Business Profiles for nursing homes and senior living communities. $500 per facility per month, everything included."><link rel="canonical" href="https://swolmg.com/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "SWOL Media Group", "alternateName": "SWOL", "url": "https://swolmg.com/", "email": "support@swolmg.com", "telephone": "+1-773-655-1878", "address": {"@type": "PostalAddress", "addressLocality": "Skokie", "addressRegion": "IL", "addressCountry": "US"}, "founder": [{"@type": "Person", "name": "Moe Karsh"}, {"@type": "Person", "name": "Yaakov Karsh"}], "areaServed": "US", "description": "Social media and Google Business Profile management for nursing homes, assisted living and senior care communities."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Social Media and Google Business Profile Management for Senior Care", "provider": {"@type": "Organization", "name": "SWOL Media Group", "url": "https://swolmg.com/"}, "serviceType": "Social media management", "audience": {"@type": "Audience", "audienceType": "Nursing homes, skilled nursing facilities, assisted living and memory care communities"}, "areaServed": "US", "offers": {"@type": "Offer", "price": "500", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "500", "priceCurrency": "USD", "unitText": "per facility per month", "billingIncrement": 1}, "url": "https://swolmg.com/pricing.html", "availability": "https://schema.org/InStock"}}</script>
+<script src="https://js.stripe.com/v3/" async></script></head><body>
+<title>SWOL · Social Media for Senior Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F8F7; --bg2:#FFFFFF; --ink:#0E1F24; --ink2:#41565D; --line:#D7E0E0;
+  --teal:#0F5C63; --teal2:#0B474D; --tang:#FF5A1F; --tang2:#E24C14; --mint:#DDF3EF;
+  --shadow:0 18px 50px rgba(14,31,36,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1A1D; --bg2:#122629; --ink:#EEF4F3; --ink2:#A9BDBD; --line:#233B3F;
+    --teal:#2FA7AF; --teal2:#7ED4D8; --tang:#FF6A33; --tang2:#FF8657; --mint:#153A3D;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1A1D; --bg2:#122629; --ink:#EEF4F3; --ink2:#A9BDBD; --line:#233B3F;
+  --teal:#2FA7AF; --teal2:#7ED4D8; --tang:#FF6A33; --tang2:#FF8657; --mint:#153A3D;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,"Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Arial Black",Impact,sans-serif;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--tang);outline-offset:3px}
+.btn-primary{background:var(--tang);color:#fff}
+.btn-primary:hover{background:var(--tang2)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal2)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em}
+.logo svg{width:38px;height:38px}
+.logo small{font-family:Figtree;font-weight:600;font-size:.7rem;letter-spacing:.16em;color:var(--ink2);display:block;line-height:1;margin-top:2px}
+.navlinks{display:flex;gap:1.6rem;align-items:center;font-weight:600;font-size:.95rem}
+.navlinks a{text-decoration:none;color:var(--ink2)}
+.navlinks a:hover{color:var(--ink)}
+@media(max-width:760px){.navlinks a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1 span{color:var(--tang)}
+.hero p.lead{font-size:1.2rem;color:var(--ink2);max-width:34rem;margin:1.2rem 0 1.8rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .note{margin-top:1rem;font-size:.9rem;color:var(--ink2)}
+
+/* phone mock */
+.phone{width:min(340px,100%);margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:36px;padding:18px 14px;box-shadow:var(--shadow);position:relative}
+.phone::before{content:"";display:block;width:110px;height:6px;border-radius:6px;background:var(--line);margin:0 auto 14px}
+.post{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg2)}
+.post .head{display:flex;align-items:center;gap:.6rem;padding:.7rem .8rem;font-size:.85rem}
+.post .av{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.7rem}
+.post .head b{display:block}
+.post .head span{color:var(--ink2);font-size:.75rem}
+.post .media{aspect-ratio:4/5;background:linear-gradient(135deg,var(--teal) 0%,var(--tang) 100%);position:relative;display:grid;place-items:center}
+.post .media .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);color:#0E1F24;font-size:.7rem;font-weight:700;padding:.25rem .5rem;border-radius:6px;letter-spacing:.05em}
+.post .media .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center}
+.post .media .play i{width:0;height:0;border-left:20px solid #0E1F24;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.post .media .cap{position:absolute;bottom:12px;left:12px;right:12px;color:#fff;font-weight:700;font-size:.95rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.post .foot{padding:.6rem .8rem;font-size:.8rem;color:var(--ink2);display:flex;gap:1rem}
+.post .foot b{color:var(--ink)}
+.phone .queue{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.phone .q{display:flex;justify-content:space-between;font-size:.75rem;padding:.5rem .7rem;border-radius:10px;background:var(--mint);color:var(--ink)}
+.phone .q em{font-style:normal;color:var(--teal);font-weight:700}
+
+/* proof strip */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof div{padding:26px 18px;border-right:1px solid var(--line)}
+.proof div:last-child{border-right:0}
+.proof b{font-family:"Bricolage Grotesque";font-size:2.2rem;font-weight:800;display:block;line-height:1;font-variant-numeric:tabular-nums}
+.proof span{font-size:.9rem;color:var(--ink2)}
+@media(max-width:700px){.proof .wrap{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div{border-bottom:1px solid var(--line)}}
+
+section{padding:88px 0}
+.sec-head{max-width:40rem;margin-bottom:40px}
+.sec-head p{color:var(--ink2);font-size:1.1rem;margin-top:.8rem}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.services{grid-template-columns:1fr}}
+.svc{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--bg2)}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);display:grid;place-items:center;margin-bottom:1rem;color:var(--teal)}
+.svc p{color:var(--ink2);margin-top:.5rem;font-size:.98rem}
+
+/* case study */
+.case{background:var(--teal);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:820px){.case{grid-template-columns:1fr;padding:32px}}
+.case .eyebrow{color:#BFEAE6}
+.case h2{color:#fff;margin-top:.6rem}
+.case p{color:#D8F0EE;margin-top:1rem;font-size:1.05rem;max-width:32rem}
+.case ul{margin:1.4rem 0 0;padding:0;list-style:none;display:grid;gap:.6rem}
+.case li{display:flex;gap:.6rem;align-items:flex-start}
+.case li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tang);margin-top:.5rem;flex:none}
+.facilities{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.facilities div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px;font-size:.8rem;text-align:center}
+.facilities div b{font-family:"Bricolage Grotesque";font-size:1.5rem;display:block;font-weight:800}
+
+/* pricing */
+.pricing{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.tiers.one{grid-template-columns:1.4fr 1fr;max-width:960px;margin:0 auto}
+.tier.side{background:var(--bg2)}
+@media(max-width:900px){.tiers,.tiers.one{grid-template-columns:1fr}}
+.drop{display:none;margin-top:14px;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--ground)}
+.drop.open{display:block;animation:dp .18s ease-out}@keyframes dp{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.drop .drow{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}.drop .num{width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:grid;place-items:center;flex:none;font-size:.85rem}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;overflow:hidden}.qty button{width:40px;height:40px;border:0;background:#fff;font-size:1.3rem;cursor:pointer;color:var(--teal)}.qty b{min-width:40px;text-align:center;font-size:1.1rem}
+.drop input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;min-width:0;flex:1 1 140px;background:#fff;width:auto;margin:0}.drop .total{font-weight:700;color:var(--ink)}.drop .btn{width:100%;justify-content:center;margin-top:6px}.drop form{border:0;padding:0;background:none;margin:0;box-shadow:none}.drop .note{font-size:.82rem;color:var(--ink2);margin:8px 0 0}
+
+.tier{border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;background:var(--bg);position:relative}
+.tier.hot{border:2px solid var(--tang);background:var(--bg2)}
+.tier .badge{position:absolute;top:-14px;left:28px;background:var(--tang);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px}
+.tier h3{font-size:1.6rem}
+.tier .for{color:var(--ink2);font-size:.95rem;margin-top:.3rem;min-height:2.6em}
+.price{margin:1.4rem 0 .2rem;display:flex;align-items:baseline;gap:.4rem}
+.price b{font-family:"Bricolage Grotesque";font-size:3rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.price span{color:var(--ink2)}
+.then{font-size:.85rem;color:var(--ink2)}
+.then s{opacity:.7}
+.tier ul{list-style:none;padding:0;margin:1.4rem 0;display:grid;gap:.55rem;font-size:.95rem}
+.tier li{display:flex;gap:.55rem;align-items:flex-start}
+.tier li svg{flex:none;margin-top:.3rem}
+.tier .btn{margin-top:auto;justify-content:center}
+.fine{margin-top:26px;font-size:.88rem;color:var(--ink2);max-width:60rem}
+.fine b{color:var(--ink)}
+.addons{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:820px){.addons{grid-template-columns:1fr 1fr}}
+.addons div{border:1px dashed var(--line);border-radius:14px;padding:14px;font-size:.9rem}
+.addons b{display:block;font-family:"Bricolage Grotesque";font-size:1.15rem}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding:22px;border-radius:18px;background:var(--mint);position:relative}
+.step::before{counter-increment:s;content:"";font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.step h3{margin-top:.4rem;font-size:1.15rem}
+.step p{font-size:.92rem;color:var(--ink2);margin-top:.4rem}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-family:"Bricolage Grotesque";font-size:1.4rem;color:var(--teal);line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:.7rem;color:var(--ink2);max-width:46rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:14px;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:28px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--ink2)}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.contact .info{display:grid;gap:1.2rem}
+.contact .info a{color:var(--teal);font-weight:600;text-decoration:none}
+.socials{display:flex;gap:.6rem;flex-wrap:wrap}
+.socials a{border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-size:.85rem;text-decoration:none;font-weight:600}
+.socials a:hover{border-color:var(--teal)}
+.toast{display:none;background:var(--mint);color:var(--ink);padding:.8rem 1rem;border-radius:12px;font-size:.92rem}
+
+footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:var(--ink2)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.gcard{width:min(360px,100%);margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.gcard .top{padding:16px 18px;border-bottom:1px solid var(--line)}
+.gcard .top b{font-size:1.1rem;display:block}
+.gcard .stars{color:#F4B400;font-size:1rem;letter-spacing:.05em}
+.gcard .row2{display:flex;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line);font-size:.85rem}
+.gcard .row2 span:last-child{font-weight:700;color:var(--teal)}
+.gcard .rev{padding:12px 18px;font-size:.82rem;color:var(--ink2)}
+.gcard .rev b{color:var(--ink)}
+.gcard .rep{margin-top:6px;padding:8px 10px;background:var(--mint);border-radius:10px;color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.flow{grid-template-columns:1fr}}
+.flow div{padding:24px;border-radius:18px;background:var(--mint)}
+.flow b{font-family:"Bricolage Grotesque";font-size:2rem;display:block;color:var(--teal);line-height:1}
+.flow h3{margin:.5rem 0 .3rem;font-size:1.1rem}
+.flow p{font-size:.93rem;color:var(--ink2)}
+.about{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:20px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.who{padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--bg2)}
+.who b{font-family:"Bricolage Grotesque";font-size:1.3rem;display:block}
+.who span{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:block;margin:.2rem 0 .7rem}
+.who p{color:var(--ink2);font-size:.97rem}
+.who.story{background:var(--mint);border-color:transparent;display:flex;align-items:center}
+.who.story p{color:var(--ink);font-size:1.02rem}
+</style>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top" aria-label="SWOL Media Group home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="var(--teal)"/><path d="M15 11l14 9-14 9z" fill="#fff"/><circle cx="31" cy="9" r="5" fill="var(--tang)"/></svg>
+    <span>SWOL<small>SOCIAL MEDIA FOR SENIOR CARE</small></span>
+  </a>
+  <div class="navlinks">
+    <a href="#included">What we do</a><a href="#pricing">Pricing</a><a href="#how">How it works</a><a href="#about">Who we are</a><a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="#pricing" onclick="openSub(event)">Subscribe</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <p class="eyebrow">Social media management for nursing homes &amp; senior living</p>
+    <h1 style="margin-top:.6rem">Your facility does wonderful things every day. Families should <span>see it</span>.</h1>
+    <p class="lead">SWOL takes over your Facebook, Instagram, LinkedIn and Google Business Profile. Your staff sends us the photos and clips from daily life; we turn them into posts, videos and montages, keep your Google listing right, and answer your reviews. One price, one team, we start this week.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#pricing" onclick="openSub(event)">$500/facility · Subscribe</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+    <p class="note">Built for skilled nursing, assisted living, memory care and rehab. Multi-facility groups welcome.</p>
+  </div>
+  <div class="phone" aria-label="Example facility post">
+    <div class="post">
+      <div class="head"><div class="av">YF</div><div><b>Your Facility</b><span>Instagram · Post</span></div></div>
+      <div class="media"><span class="tag">Made by SWOL from your footage</span><div class="play"><i></i></div><div class="cap">Summer BBQ on the patio ☀️ residents, families &amp; staff</div></div>
+      <div class="foot"><b>♥ 184</b><span>31 comments</span><span>22 shares</span></div>
+    </div>
+    <div class="queue">
+      <div class="q"><span>Therapy milestone video</span><em>Scheduled</em></div>
+      <div class="q"><span>Employee of the month</span><em>Scheduled</em></div>
+      <div class="q"><span>Family night recap montage</span><em>Editing</em></div>
+    </div>
+  </div>
+</div></header>
+
+<div class="proof"><div class="wrap">
+  <div><b>18</b><span>homes managed across 10 brands</span></div>
+  <div><b>50+</b><span>Facebook, Instagram, LinkedIn &amp; Google pages run day to day</span></div>
+  <div><b>Quarterly</b><span>written report on reach, growth and what worked</span></div>
+  <div><b>0</b><span>contracts. Month to month, cancel any time</span></div>
+</div></div>
+
+<section id="included"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">What we do</p><h2 style="margin-top:.5rem">You send the moments. We do everything else.</h2><p>Your activities director or admissions team snaps photos and short clips on their phone and drops them in a shared folder. That's the whole job on your end.</p></div>
+  <div class="services">
+    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></div><h3>Videos</h3><p>Event recaps, resident spotlights, staff appreciation, therapy wins and tours. You shoot it on your phone; we edit it, add music and captions, and post it.</p></div>
+    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div><h3>Posting on all three platforms</h3><p>Photos, videos and updates published to Facebook, Instagram and LinkedIn from what you send us.</p></div>
+    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Google Business Profile</h3><p>Families search Google before they call. We keep your listing accurate, respond to every review, and ask happy families for new ones. Managed alongside your social pages.</p></div>
+    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-6 4 3 4-5"/></svg></div><h3>Quarterly report</h3><p>Every quarter: a written report on reach, growth and what worked, sent straight to you.</p></div>
+    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Privacy first</h3><p>We only post residents who have signed consent on file with you, never post health details, and pull anything down the moment you ask.</p></div>
+  </div>
+</div></section>
+
+<section class="pricing" id="pricing"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Pricing</p><h2 style="margin-top:.5rem">One price. Everything handled.</h2><p>$500 per facility per month covers your social media and your Google Business Profile. Pick how many facilities, pay, and we start.</p></div>
+  <div class="tiers one">
+    <div class="tier hot">
+      <span class="badge">Everything included</span>
+      <h3>Full management</h3><p class="for">We take over your social media and your Google profile. One flat price per facility.</p>
+      <div class="price"><b>$500</b><span>/facility/mo</span></div>
+      <p class="then">Facebook · Instagram · LinkedIn · Google</p>
+      <ul>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Facebook, Instagram and LinkedIn, all managed by us</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Photos and videos you send turned into posts, edits and montages</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Your Google Business Profile kept accurate, with every review answered</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Reviews requested from happy families, the right way</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Quarterly written report on reach, growth and what worked</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Month to month. No contract.</li>
+      </ul>
+      <button class="btn btn-primary" type="button" id="subBtn" aria-expanded="false" aria-controls="subDrop" onclick="toggleDrop('subDrop',this)">Subscribe</button>
+      <div class="drop" id="subDrop">
+        <div class="drow"><span class="num">1</span><span>How many facilities?</span><span class="qty"><button type="button" onclick="qty(-1)" aria-label="Fewer">−</button><b id="qtyN">1</b><button type="button" onclick="qty(1)" aria-label="More">+</button></span><span class="total" id="qtyTotal">$500/month</span></div>
+        <div class="drow"><span class="num">2</span><span>Your email</span><input type="email" id="subEmail" placeholder="you@facility.com" autocomplete="email"></div>
+        <div class="drow"><span class="num">3</span><span>Pay with card. That's it — we handle the rest.</span></div>
+        <a class="btn btn-primary" id="payBtn" data-stripe="full" href="start.html?plan=full">Pay securely →</a>
+        <div id="checkoutBox" style="margin-top:12px"></div>
+        <p class="note">Month to month, cancel any time. After payment you'll tell us your page names on the same screen.</p>
+      </div>
+    </div>
+    <div class="tier side">
+      <h3>Running a group?</h3><p class="for">Ten or more facilities, or something specific you need beyond the standard package? Talk to us and we'll quote it.</p>
+      <ul>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Tell us how many facilities and what you need; we send a quote</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="var(--teal)" stroke-width="2"/></svg>Anything outside the package is quoted separately</li>
+      </ul>
+      <button class="btn btn-ghost" type="button" aria-expanded="false" aria-controls="grpDrop" onclick="toggleDrop('grpDrop',this)">Get a group quote</button>
+      <div class="drop" id="grpDrop">
+        <form id="grp" name="group" method="POST" data-netlify="true" netlify-honeypot="website"><input type="hidden" name="form-name" value="group"><p hidden><label>Website<input name="website"></label></p>
+          <div class="drow"><span class="num">1</span><input name="name" placeholder="Your name" required><input name="facilities" type="number" min="1" placeholder="# of facilities" required style="max-width:140px"></div>
+          <div class="drow"><span class="num">2</span><input name="email" type="email" placeholder="Your email" required></div>
+          <div class="drow"><span class="num">3</span><input name="notes" placeholder="Anything specific you need? (optional)"></div>
+          <button class="btn btn-primary" type="submit">Send</button>
+          <p class="note" id="grpToast" style="display:none">Got it — we'll email you a quote.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <p class="fine">Billed monthly per facility. No contract; cancel any time from your <a href="https://billing.stripe.com/p/login/bJebJ08qQaixcIg22h63K00">billing portal</a>. 10+ facilities? Use the group quote form above. By subscribing you agree to our <a href="terms.html">Terms of Service</a>.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">How it works</p><h2 style="margin-top:.5rem">Four steps, then it runs.</h2></div>
+  <div class="steps">
+    <div class="step"><h3>Subscribe</h3><p>Pay securely by card. Add every facility you want covered at checkout.</p></div>
+    <div class="step"><h3>We connect to your pages</h3><p>Tell us who manages your Facebook, Instagram, LinkedIn and Google profile; they get a one-click access request from us. No passwords. You stay the owner; remove us any time.</p></div>
+    <div class="step"><h3>Send us moments</h3><p>We set up a shared folder. Staff drop in photos and clips from their phones whenever something's worth sharing.</p></div>
+    <div class="step"><h3>We post, you get the report</h3><p>Your pages stay active. Every quarter you get a written report on what reached families and what grew.</p></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Who we are</p><h2 style="margin-top:.5rem">Two brothers who run nursing home pages for a living.</h2></div>
+  <div class="about">
+    <div class="who"><b>Moe Karsh</b><span>Co-founder</span><p>Spent years recruiting for skilled nursing facilities before starting SWOL, so he knows what administrators are actually up against. Handles clients and the business side.</p></div>
+    <div class="who"><b>Yaakov Karsh</b><span>Co-founder</span><p>Runs the pages day to day: the posting, the editing, the videos. If something goes up on one of the 50+ pages SWOL manages, Yaakov was probably the one who made it.</p></div>
+    <div class="who story"><p>SWOL started in Chicago with one senior-care group and grew inside it: 18 homes across 10 brands today, all managed by the two of us. No account managers passing you around, no offshore team. The people you talk to are the people doing the work.</p></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">FAQ</p><h2 style="margin-top:.5rem">Straight answers.</h2></div>
+  <details open><summary>What do we have to do on our end?</summary><p>Send us moments. Photos and short clips from activities, events, therapy wins, staff celebrations. One person on your team drops them in the shared folder. We handle the editing, writing, scheduling, posting, and your Google reviews.</p></details>
+  <details><summary>What do you do with our Google Business Profile?</summary><p>We keep the listing accurate (hours, phone, photos, services), respond to every review in a way that protects resident privacy, and run a simple review-request process so happy families leave one. We never guarantee a review gets removed; Google decides that. We report the ones that break Google's rules and follow up.</p></details>
+  <details><summary>How do you get access to our pages?</summary><p>We send your page admin an access request through Meta Business, LinkedIn and Google; they click Accept. No passwords change hands. You remain the owner and can remove us in one click. Not sure who your admin is? We'll figure it out with you.</p></details>
+  <details><summary>What about resident privacy and HIPAA?</summary><p>We only post residents who have a signed photo/media consent on file with your facility, we never mention diagnoses or care details, and we never confirm who is a resident in comments or messages. Anything you ask us to remove comes down immediately.</p></details>
+  
+  <details><summary>How do we know it's working?</summary><p>Every quarter you get a written report on reach, follower growth, engagement and what performed best.</p></details>
+  <details><summary>Is there anything beyond the $500?</summary><p>Not for the standard package. If you want something specific outside it, we quote it separately before doing anything.</p></details>
+  <details><summary>Can we cancel?</summary><p>Any time, from your billing portal. Service continues to the end of the paid month and your pages stay yours with everything we posted still on them.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div>
+      <p class="eyebrow">Questions</p><h2 style="margin-top:.5rem">Talk to a person.</h2>
+      <p style="color:var(--ink2);margin:1rem 0 1.6rem">Prefer to chat before subscribing, or have more than ten facilities? Reach us and we'll answer the same business day.</p>
+      <div class="info">
+        <div><p class="eyebrow">Email</p><a href="mailto:support@swolmg.com">support@swolmg.com</a></div>
+        <div><p class="eyebrow">Call or text</p><a href="tel:+17736551878">773-655-1878</a></div>
+        <div><p class="eyebrow">Hours</p><p>Mon–Fri, 9:00am–5:00pm Central</p></div>
+      </div>
+    </div>
+    <form id="lead" name="lead" method="POST" data-netlify="true" netlify-honeypot="website"><input type="hidden" name="form-name" value="lead"><p hidden><label>Website<input name="website"></label></p>
+      <div class="row"><label>Your name<input name="name" required autocomplete="name"></label><label>Facility / group<input name="company" required autocomplete="organization"></label></div>
+      <div class="row"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Facilities<select name="facilities"><option>1</option><option>2–4</option><option>5–9</option><option>10+</option></select></label></div>
+      <label>Your question<textarea name="notes" rows="3" placeholder="e.g. We have 6 buildings and nobody has posted since March."></textarea></label>
+      <button class="btn btn-primary" type="submit">Send</button>
+      <p class="toast" id="toast">Opening your email app with the details filled in. If it doesn't open, email support@swolmg.com.</p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© <span id="yr"></span> SWOL Media Group · Skokie, IL</span>
+  <span><a href="/what-we-do.html">What we do</a> · <a href="/pricing.html">Pricing</a> · <a href="/how-it-works.html">How it works</a> · <a href="/who-we-are.html">Who we are</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="https://billing.stripe.com/p/login/bJebJ08qQaixcIg22h63K00">Manage billing</a></span>
+</div></footer>
+
+<script>
+/* ===== SETUP: paste Stripe Payment Links (monthly, adjustable quantity). Each link's "After payment" redirect: https://swolmg.com/start.html?plan=<essentials|growth|signature>&session_id={CHECKOUT_SESSION_ID} ===== */
+const NF=(name,obj)=>fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':name,...obj}).toString()}).then(r=>r.ok);
+const STRIPE_LINKS = { full: "https://buy.stripe.com/dRmdR8gXm4YdgYw0Yd63K03" };
+document.querySelectorAll('[data-stripe]').forEach(a=>{ const u=STRIPE_LINKS[a.dataset.stripe]; if(u){ a.href=u; } });
+function toggleDrop(id,btn){const d=document.getElementById(id);const o=!d.classList.contains('open');d.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o){const f=d.querySelector('input');setTimeout(()=>{d.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}}
+function openSub(e){e.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth'});const d=document.getElementById('subDrop');if(!d.classList.contains('open')){toggleDrop('subDrop',document.getElementById('subBtn'));}}
+let Q=1;function qty(n){Q=Math.min(99,Math.max(1,Q+n));document.getElementById('qtyN').textContent=Q;document.getElementById('qtyTotal').textContent='$'+(500*Q).toLocaleString()+'/month';}
+const STRIPE_PK="pk_live_51UB3SxCG9PfXcDxhBPoxU6awbKGOQ5zX879qJ1GWmJuqfoNfvVTsC6gd819O6tceRvmXErgdqjskBgYKXuJtAuLo00fB9kDzaS";
+let emb=null;
+document.getElementById('payBtn').addEventListener('click',async function(e){
+  const em=document.getElementById('subEmail').value.trim();
+  const u=new URL(STRIPE_LINKS.full);if(em)u.searchParams.set('prefilled_email',em);u.searchParams.set('client_reference_id','fac'+Q);this.href=u.toString();
+  if(!window.Stripe) return; // fallback: hosted link
+  e.preventDefault(); const btn=this; btn.textContent='Loading secure payment…'; btn.style.pointerEvents='none';
+  try{
+    const r=await fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({quantity:Q,email:em})});
+    const j=await r.json(); if(!r.ok||!j.clientSecret) throw new Error(j.error||'no session');
+    if(emb){emb.destroy();emb=null;}
+    emb=await Stripe(STRIPE_PK).initEmbeddedCheckout({clientSecret:j.clientSecret});
+    emb.mount('#checkoutBox'); btn.style.display='none';
+    document.querySelectorAll('#subDrop .qty button').forEach(b=>b.disabled=true);
+    document.getElementById('checkoutBox').scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(err){ btn.textContent='Pay securely →'; btn.style.pointerEvents=''; window.location.href=u.toString(); }
+});
+document.getElementById('grp').addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(e.target);const t=document.getElementById('grpToast');t.style.display='block';t.textContent='Sending…';try{if(await NF('group',Object.fromEntries(f))){t.textContent='Got it — we\'ll email you a quote within one business day.';e.target.querySelector('button[type=submit]').disabled=true;return;}}catch(err){}
+  const g=k=>f.get(k)||'';window.location.href=`mailto:support@swolmg.com?subject=${encodeURIComponent('Group pricing: '+g('facilities')+' facilities')}&body=${encodeURIComponent('Name: '+g('name')+'\nEmail: '+g('email')+'\nFacilities: '+g('facilities')+'\n\n'+g('notes'))}`;});
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('lead').addEventListener('submit',async e=>{
+  e.preventDefault(); const f=new FormData(e.target); const g=k=>f.get(k)||'';
+  const body=`Name: ${g('name')}\nFacility: ${g('company')}\nEmail: ${g('email')}\nFacilities: ${g('facilities')}\n\n${g('notes')}`;
+  document.getElementById('toast').style.display='block';
+  try{ if(await NF('lead',Object.fromEntries(f))){ document.getElementById('toast').textContent='Got it — we reply within one business day.'; e.target.querySelector('button').disabled=true; return; } }catch(err){}
+  window.location.href=`mailto:support@swolmg.com?subject=${encodeURIComponent('Question: '+g('company'))}&body=${encodeURIComponent(body)}`;
+});
+</script>
+
+</body></html>

@@ -1,0 +1,255 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect your Google Business Profile | SWOL</title><meta name="robots" content="noindex"></head><body><title>SWOL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F8F7; --bg2:#FFFFFF; --ink:#0E1F24; --ink2:#41565D; --line:#D7E0E0;
+  --teal:#0F5C63; --teal2:#0B474D; --tang:#FF5A1F; --tang2:#E24C14; --mint:#DDF3EF;
+  --shadow:0 18px 50px rgba(14,31,36,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1A1D; --bg2:#122629; --ink:#EEF4F3; --ink2:#A9BDBD; --line:#233B3F;
+    --teal:#2FA7AF; --teal2:#7ED4D8; --tang:#FF6A33; --tang2:#FF8657; --mint:#153A3D;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1A1D; --bg2:#122629; --ink:#EEF4F3; --ink2:#A9BDBD; --line:#233B3F;
+  --teal:#2FA7AF; --teal2:#7ED4D8; --tang:#FF6A33; --tang2:#FF8657; --mint:#153A3D;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,"Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Arial Black",Impact,sans-serif;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--tang);outline-offset:3px}
+.btn-primary{background:var(--tang);color:#fff}
+.btn-primary:hover{background:var(--tang2)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal2)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em}
+.logo svg{width:38px;height:38px}
+.logo small{font-family:Figtree;font-weight:600;font-size:.7rem;letter-spacing:.16em;color:var(--ink2);display:block;line-height:1;margin-top:2px}
+.navlinks{display:flex;gap:1.6rem;align-items:center;font-weight:600;font-size:.95rem}
+.navlinks a{text-decoration:none;color:var(--ink2)}
+.navlinks a:hover{color:var(--ink)}
+@media(max-width:760px){.navlinks a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1 span{color:var(--tang)}
+.hero p.lead{font-size:1.2rem;color:var(--ink2);max-width:34rem;margin:1.2rem 0 1.8rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .note{margin-top:1rem;font-size:.9rem;color:var(--ink2)}
+
+/* phone mock */
+.phone{width:min(340px,100%);margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:36px;padding:18px 14px;box-shadow:var(--shadow);position:relative}
+.phone::before{content:"";display:block;width:110px;height:6px;border-radius:6px;background:var(--line);margin:0 auto 14px}
+.post{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg2)}
+.post .head{display:flex;align-items:center;gap:.6rem;padding:.7rem .8rem;font-size:.85rem}
+.post .av{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.7rem}
+.post .head b{display:block}
+.post .head span{color:var(--ink2);font-size:.75rem}
+.post .media{aspect-ratio:4/5;background:linear-gradient(135deg,var(--teal) 0%,var(--tang) 100%);position:relative;display:grid;place-items:center}
+.post .media .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);color:#0E1F24;font-size:.7rem;font-weight:700;padding:.25rem .5rem;border-radius:6px;letter-spacing:.05em}
+.post .media .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center}
+.post .media .play i{width:0;height:0;border-left:20px solid #0E1F24;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.post .media .cap{position:absolute;bottom:12px;left:12px;right:12px;color:#fff;font-weight:700;font-size:.95rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.post .foot{padding:.6rem .8rem;font-size:.8rem;color:var(--ink2);display:flex;gap:1rem}
+.post .foot b{color:var(--ink)}
+.phone .queue{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.phone .q{display:flex;justify-content:space-between;font-size:.75rem;padding:.5rem .7rem;border-radius:10px;background:var(--mint);color:var(--ink)}
+.phone .q em{font-style:normal;color:var(--teal);font-weight:700}
+
+/* proof strip */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof div{padding:26px 18px;border-right:1px solid var(--line)}
+.proof div:last-child{border-right:0}
+.proof b{font-family:"Bricolage Grotesque";font-size:2.2rem;font-weight:800;display:block;line-height:1;font-variant-numeric:tabular-nums}
+.proof span{font-size:.9rem;color:var(--ink2)}
+@media(max-width:700px){.proof .wrap{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div{border-bottom:1px solid var(--line)}}
+
+section{padding:88px 0}
+.sec-head{max-width:40rem;margin-bottom:40px}
+.sec-head p{color:var(--ink2);font-size:1.1rem;margin-top:.8rem}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.services{grid-template-columns:1fr}}
+.svc{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--bg2)}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);display:grid;place-items:center;margin-bottom:1rem;color:var(--teal)}
+.svc p{color:var(--ink2);margin-top:.5rem;font-size:.98rem}
+
+/* case study */
+.case{background:var(--teal);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:820px){.case{grid-template-columns:1fr;padding:32px}}
+.case .eyebrow{color:#BFEAE6}
+.case h2{color:#fff;margin-top:.6rem}
+.case p{color:#D8F0EE;margin-top:1rem;font-size:1.05rem;max-width:32rem}
+.case ul{margin:1.4rem 0 0;padding:0;list-style:none;display:grid;gap:.6rem}
+.case li{display:flex;gap:.6rem;align-items:flex-start}
+.case li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tang);margin-top:.5rem;flex:none}
+.facilities{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.facilities div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px;font-size:.8rem;text-align:center}
+.facilities div b{font-family:"Bricolage Grotesque";font-size:1.5rem;display:block;font-weight:800}
+
+/* pricing */
+.pricing{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+@media(max-width:900px){.tiers{grid-template-columns:1fr}}
+.tier{border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;background:var(--bg);position:relative}
+.tier.hot{border:2px solid var(--tang);background:var(--bg2)}
+.tier .badge{position:absolute;top:-14px;left:28px;background:var(--tang);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px}
+.tier h3{font-size:1.6rem}
+.tier .for{color:var(--ink2);font-size:.95rem;margin-top:.3rem;min-height:2.6em}
+.price{margin:1.4rem 0 .2rem;display:flex;align-items:baseline;gap:.4rem}
+.price b{font-family:"Bricolage Grotesque";font-size:3rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.price span{color:var(--ink2)}
+.then{font-size:.85rem;color:var(--ink2)}
+.then s{opacity:.7}
+.tier ul{list-style:none;padding:0;margin:1.4rem 0;display:grid;gap:.55rem;font-size:.95rem}
+.tier li{display:flex;gap:.55rem;align-items:flex-start}
+.tier li svg{flex:none;margin-top:.3rem}
+.tier .btn{margin-top:auto;justify-content:center}
+.fine{margin-top:26px;font-size:.88rem;color:var(--ink2);max-width:60rem}
+.fine b{color:var(--ink)}
+.addons{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:820px){.addons{grid-template-columns:1fr 1fr}}
+.addons div{border:1px dashed var(--line);border-radius:14px;padding:14px;font-size:.9rem}
+.addons b{display:block;font-family:"Bricolage Grotesque";font-size:1.15rem}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding:22px;border-radius:18px;background:var(--mint);position:relative}
+.step::before{counter-increment:s;content:"";font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.step h3{margin-top:.4rem;font-size:1.15rem}
+.step p{font-size:.92rem;color:var(--ink2);margin-top:.4rem}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-family:"Bricolage Grotesque";font-size:1.4rem;color:var(--teal);line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:.7rem;color:var(--ink2);max-width:46rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:14px;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:28px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--ink2)}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.contact .info{display:grid;gap:1.2rem}
+.contact .info a{color:var(--teal);font-weight:600;text-decoration:none}
+.socials{display:flex;gap:.6rem;flex-wrap:wrap}
+.socials a{border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-size:.85rem;text-decoration:none;font-weight:600}
+.socials a:hover{border-color:var(--teal)}
+.toast{display:none;background:var(--mint);color:var(--ink);padding:.8rem 1rem;border-radius:12px;font-size:.92rem}
+
+footer{border-top:1px solid var(--line);padding:36px 0;font-size:.88rem;color:var(--ink2)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.gcard{width:min(360px,100%);margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.gcard .top{padding:16px 18px;border-bottom:1px solid var(--line)}
+.gcard .top b{font-size:1.1rem;display:block}
+.gcard .stars{color:#F4B400;font-size:1rem;letter-spacing:.05em}
+.gcard .row2{display:flex;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line);font-size:.85rem}
+.gcard .row2 span:last-child{font-weight:700;color:var(--teal)}
+.gcard .rev{padding:12px 18px;font-size:.82rem;color:var(--ink2)}
+.gcard .rev b{color:var(--ink)}
+.gcard .rep{margin-top:6px;padding:8px 10px;background:var(--mint);border-radius:10px;color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.flow{grid-template-columns:1fr}}
+.flow div{padding:24px;border-radius:18px;background:var(--mint)}
+.flow b{font-family:"Bricolage Grotesque";font-size:2rem;display:block;color:var(--teal);line-height:1}
+.flow h3{margin:.5rem 0 .3rem;font-size:1.1rem}
+.flow p{font-size:.93rem;color:var(--ink2)}
+
+.steps2{display:grid;gap:14px;margin:1.2rem 0}
+.st{display:flex;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--bg2)}
+.st b.n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque";font-size:1.1rem}
+.st p{color:var(--ink2);font-size:.95rem;margin-top:.2rem}
+.copybox{display:flex;gap:8px;align-items:center;margin-top:.6rem}
+.copybox code{background:var(--mint);border:1px solid var(--line);border-radius:10px;padding:.6rem .9rem;font-size:1rem;font-weight:700;color:var(--ink)}
+.copybox button{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--bg2);color:var(--ink);border-radius:999px;padding:.5rem .9rem;cursor:pointer}
+.ok{display:none;background:var(--mint);border-radius:14px;padding:18px;margin-top:1rem}
+</style>
+
+<nav><div class="wrap">
+  <a class="logo" href="index.html" aria-label="SWOL home"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="var(--teal)"/><path d="M15 11l14 9-14 9z" fill="#fff"/><circle cx="31" cy="9" r="5" fill="var(--tang)"/></svg><span>SWOL<small>SOCIAL MEDIA FOR SENIOR CARE</small></span></a>
+  <div class="navlinks"><a href="mailto:support@swolmg.com">Need help?</a></div>
+</div></nav>
+<section><div class="wrap" style="max-width:820px">
+  <p class="eyebrow">Step 2 of 2 · Tell us about your facility</p>
+  <h1 style="margin:.5rem 0 .8rem;font-size:clamp(2rem,4.5vw,3rem)">Payment received. We take it from here.</h1>
+  <p class="lead" style="color:var(--ink2)">We connect to your pages for you: tell us who currently manages them and we send that person a one-click access request from Facebook, Instagram, LinkedIn and Google. No passwords, you stay the owner, remove us any time.</p>
+
+  <div class="steps2">
+    <div class="st"><b class="n">1</b><div><b>We request access</b><p>Within one business day, the person who manages your pages gets an access request from SWOL on Facebook/Instagram (Meta Business), LinkedIn, and your Google Business Profile. They click Accept. That's it.</p></div></div>
+    <div class="st"><b class="n">2</b><div><b>Don't know who manages your pages?</b><p>Tick "I need help with page access" below. We'll find out who has admin rights and walk you through recovering it if it's a former employee or agency.</p></div></div>
+    <div class="st"><b class="n">3</b><div><b>Your shared folder</b><p>Within one business day we email your point person a link to a private folder. Staff drop photos and clips straight from their phones; nothing needs organizing.</p></div></div>
+    <div class="st"><b class="n">4</b><div><b>Tell us about your facility</b><p>Voice, what to celebrate, what to avoid, and who signs off.</p></div></div>
+  </div>
+
+  <form id="connect" name="start" method="POST" data-netlify="true" netlify-honeypot="website" style="margin-top:.4rem"><input type="hidden" name="form-name" value="start"><input type="hidden" name="plan" id="plan" value="Full management ($500/facility)"><input type="hidden" name="stripe_session"><p hidden><label>Website<input name="website"></label></p>
+    <div class="row"><label>Facility / group name<input name="business" required></label><label>Number of facilities (as paid)<input name="locations_dup" type="number" min="1" value="1" oninput="document.getElementById('locations').value=this.value"></label></div>
+    <div class="row"><label>Facebook Page link(s) — one per line<textarea name="facebook" rows="2" placeholder="https://facebook.com/..." required></textarea></label><label>Instagram handle(s)<textarea name="instagram" rows="2" placeholder="@yourfacility"></textarea></label></div>
+    <div class="row"><label>LinkedIn Page link<input name="linkedin" placeholder="https://linkedin.com/company/..."></label><label>Google Maps link(s) to your facility — one per line<textarea name="google" rows="2" placeholder="https://maps.app.goo.gl/..."></textarea></label><input type="hidden" name="locations" id="locations" value="1"></div>
+    <div class="row"><label>Point person for photos &amp; approvals<input name="name" required></label><label>Their email<input name="email" type="email" required></label></div>
+    <div class="row"><label>Who currently manages your Facebook/Instagram? (name)<input name="admin_name"></label><label>Their email (we send the access request here)<input name="admin_email" type="email"></label></div>
+    <label>Their cell (for the shared-folder link and quick questions)<input name="phone" type="tel"></label>
+    
+    <label>Things to celebrate (activities, programs, awards, staff, anniversaries)<textarea name="celebrate" rows="2"></textarea></label>
+    <label>Things to avoid (topics, people, words, competitors)<textarea name="avoid" rows="2"></textarea></label>
+    <label style="flex-direction:row;align-items:center;gap:.5rem"><input type="checkbox" name="consent" required style="width:auto"> We keep signed photo/media consent on file for any resident who appears in what we send, and we'll only send footage of people covered by it</label>
+    <label style="flex-direction:row;align-items:center;gap:.5rem"><input type="checkbox" name="approval" style="width:auto"> I want to approve posts before they go live (otherwise we post and you can ask for changes any time)</label>
+    <input type="hidden" name="invited" id="invited" value="n/a">
+    <label style="flex-direction:row;align-items:center;gap:.5rem"><input type="checkbox" name="needhelp" id="needhelp" style="width:auto"> I need help with page access (not sure who the admin is)</label>
+    <p id="warn" style="display:none;color:var(--tang);font-size:.9rem"></p>
+    <button class="btn btn-primary" type="submit">Finish setup</button>
+    <div class="ok" id="ok"><b>You're set.</b> <span id="okhelp"></span> Within one business day your page admin gets our access request and your point person gets the shared-folder link; first posts go up as soon as we're in and have footage. Questions: <a href="mailto:support@swolmg.com">support@swolmg.com</a>.<div id="fallback" style="display:none;margin-top:.8rem;font-size:.9rem"><b>If your email app didn't open</b>, copy this and send it to support@swolmg.com:<pre id="fbtext" style="white-space:pre-wrap;background:var(--bg2);padding:10px;border-radius:10px;border:1px solid var(--line)"></pre><button type="button" class="btn btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('fbtext').textContent);this.textContent='Copied'">Copy details</button></div></div>
+  </form>
+</div></section>
+<footer><div class="wrap"><span>© <span id="yr"></span> SWOL Media Group</span><span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="https://billing.stripe.com/p/login/bJebJ08qQaixcIg22h63K00">Manage billing</a></span></div></footer>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+const NF=(name,obj)=>fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':name,...obj}).toString()}).then(r=>r.ok);
+document.getElementById('connect').addEventListener('submit',async e=>{
+  e.preventDefault(); const f=new FormData(e.target); const g=k=>f.get(k)||'';
+  const fb=g('facebook').split('\n').map(s=>s.trim()).filter(Boolean); const n=parseInt(g('locations')||'1',10);
+  if(fb.length<n && !document.getElementById('needhelp').checked){ const w=document.getElementById('warn'); w.style.display='block'; w.textContent=`You paid for ${n} facilit${n>1?'ies':'y'} but listed ${fb.length} Facebook page${fb.length===1?'':'s'}. Add one per facility, or tick "I need help".`; return; }
+  document.getElementById('okhelp').textContent=document.getElementById('needhelp').checked?'Since you asked for help with access, we\'ll email you today with what we found and next steps.':'';
+  const body=`Facility: ${g('business')}\nPlan: ${g('plan')}\nGoogle: ${g('google')}\nFacilities: ${n}\nFacebook:\n${fb.join('\n')}\nInstagram: ${g('instagram')}\nLinkedIn: ${g('linkedin')}\nPoint person: ${g('name')} · ${g('email')} · ${g('phone')}\nCelebrate: ${g('celebrate')}\nAvoid: ${g('avoid')}\nApproval mode: ${document.querySelector('[name=approval]').checked}\nPage admin: ${g('admin_name')} · ${g('admin_email')}\nNeeds help: ${document.getElementById('needhelp').checked}\nStripe session: ${q.get('session_id')||''}`;
+  document.getElementById('ok').style.display='block'; e.target.querySelector('button[type=submit]').disabled=true;
+  try{ f.set('stripe_session',q.get('session_id')||''); f.set('approval',document.querySelector('[name=approval]').checked);  f.set('needhelp',document.getElementById('needhelp').checked); if(await NF('start',Object.fromEntries(f))) return; }catch(err){}
+  document.getElementById('fbtext').textContent=body; document.getElementById('fallback').style.display='block';
+  window.location.href=`mailto:support@swolmg.com?subject=${encodeURIComponent('New subscriber: '+g('business')+' ('+g('plan')+')')}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body></html>
