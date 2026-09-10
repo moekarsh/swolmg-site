@@ -1,7 +1,7 @@
 // Creates an embedded Stripe Checkout session so payment happens on swolmg.com.
 export default async (req) => {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
-  const key = process.env.STRIPE_SECRET_KEY;
+  const key = process.env.STRIPE_SECRET_KEY || process.env.STRIP_SECRET_KEY || process.env.stripe_secret_key;
   if (!key) return Response.json({ error: "Payments not configured" }, { status: 500 });
   const body = await req.json().catch(() => ({}));
   const q = Math.min(99, Math.max(1, parseInt(body.quantity) || 1));
