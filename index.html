@@ -126,7 +126,8 @@ section{padding:88px 0}
 .drop.open{display:block;animation:dp .18s ease-out}@keyframes dp{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .drop .drow{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}.drop .num{width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:grid;place-items:center;flex:none;font-size:.85rem}
 .qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;overflow:hidden}.qty button{width:40px;height:40px;border:0;background:#fff;font-size:1.3rem;cursor:pointer;color:var(--teal)}.qty b{min-width:40px;text-align:center;font-size:1.1rem}
-.drop input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;min-width:0;flex:1 1 140px;background:#fff;width:auto;margin:0}.drop .total{font-weight:700;color:var(--ink)}.drop .btn{width:100%;justify-content:center;margin-top:6px}.drop form{border:0;padding:0;background:none;margin:0;box-shadow:none}.drop .note{font-size:.82rem;color:var(--ink2);margin:8px 0 0}
+.drop input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;min-width:0;flex:1 1 140px;background:#fff;width:auto;margin:0}.drop .total{font-weight:700;color:var(--ink)}.drop .btn{width:100%;justify-content:center;margin-top:6px}.drop.legal{max-width:960px;margin:14px auto 0;max-height:70vh;overflow:auto;background:#fff}.legal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;background:#fff;padding-bottom:8px;border-bottom:1px solid var(--line)}.legal-head .btn{width:auto;margin:0;padding:8px 16px}.legal-body{font-size:.95rem;color:var(--ink)}.legal-body h1{font-size:1.4rem;margin:.6rem 0}.legal-body h2,.legal-body h3{font-size:1.1rem;margin:1.1rem 0 .3rem}.legal-body p,.legal-body li{margin:.35rem 0}
+.drop form{border:0;padding:0;background:none;margin:0;box-shadow:none}.drop .note{font-size:.82rem;color:var(--ink2);margin:8px 0 0}
 
 .tier{border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;background:var(--bg);position:relative}
 .tier.hot{border:2px solid var(--tang);background:var(--bg2)}
@@ -308,7 +309,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </div>
     </div>
   </div>
-  <p class="fine">Billed monthly per facility. No contract; cancel any time from your billing portal. 10+ facilities? Use the group quote form above. By subscribing you agree to our <a href="terms.html">Terms of Service</a>.</p>
+  <p class="fine">Billed monthly per facility. No contract; cancel any time from your billing portal. 10+ facilities? Use the group quote form above. By subscribing you agree to our <a href="terms.html" data-legal="terms">Terms of Service</a> and <a href="privacy.html" data-legal="privacy">Privacy Policy</a>.</p>
+  <div class="drop legal" id="legalDrop"><div class="legal-head"><b id="legalTitle"></b><button type="button" class="btn btn-ghost" onclick="closeLegal()">Close</button></div><div id="legalBody" class="legal-body"></div></div>
 </div></section>
 
 <section id="how"><div class="wrap">
@@ -373,6 +375,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 const NF=(name,obj)=>fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':name,...obj}).toString()}).then(r=>r.ok);
 const STRIPE_LINKS = { full: "https://buy.stripe.com/dRmdR8gXm4YdgYw0Yd63K03" };
 document.querySelectorAll('[data-stripe]').forEach(a=>{ const u=STRIPE_LINKS[a.dataset.stripe]; if(u){ a.href=u; } });
+
+const LEGAL={terms:'terms.html',privacy:'privacy.html'};const legalCache={};
+async function openLegal(kind){const d=document.getElementById('legalDrop');document.getElementById('legalTitle').textContent=kind==='terms'?'Terms of Service':'Privacy Policy';
+  if(!legalCache[kind]){try{const h=await (await fetch(LEGAL[kind])).text();const doc=new DOMParser().parseFromString(h,'text/html');const w=doc.querySelector('section .wrap');if(w){w.querySelectorAll('nav,.back,a[href="index.html"]').forEach(e=>e.remove());legalCache[kind]=w.innerHTML;}else legalCache[kind]='';}catch(e){legalCache[kind]='';}}
+  if(!legalCache[kind]){window.location.href=LEGAL[kind];return;}
+  document.getElementById('legalBody').innerHTML=legalCache[kind];d.classList.add('open');d.scrollTop=0;setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),50);}
+function closeLegal(){document.getElementById('legalDrop').classList.remove('open');}
+document.querySelectorAll('a[href$="terms.html"],a[href$="privacy.html"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();openLegal(a.getAttribute('href').includes('privacy')?'privacy':'terms');});});
 function toggleDrop(id,btn){const d=document.getElementById(id);const o=!d.classList.contains('open');d.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o){const f=d.querySelector('input');setTimeout(()=>{d.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}}
 function openSub(e){e.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth'});const d=document.getElementById('subDrop');if(!d.classList.contains('open')){toggleDrop('subDrop',document.getElementById('subBtn'));}}
 let Q=1;function qty(n){Q=Math.min(99,Math.max(1,Q+n));document.getElementById('qtyN').textContent=Q;document.getElementById('qtyTotal').textContent='$'+(500*Q).toLocaleString()+'/month';}
