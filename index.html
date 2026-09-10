@@ -382,7 +382,7 @@ async function openLegal(kind){const d=document.getElementById('legalDrop');docu
   if(!legalCache[kind]){window.location.href=LEGAL[kind];return;}
   document.getElementById('legalBody').innerHTML=legalCache[kind];d.classList.add('open');d.scrollTop=0;setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),50);}
 function closeLegal(){document.getElementById('legalDrop').classList.remove('open');}
-document.querySelectorAll('a[href$="terms.html"],a[href$="privacy.html"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();openLegal(a.getAttribute('href').includes('privacy')?'privacy':'terms');});});
+document.querySelectorAll('a[href*="terms"],a[href*="privacy"]').forEach(a=>{if(/stripe|billing/.test(a.href))return;a.addEventListener('click',e=>{e.preventDefault();openLegal(/privacy/.test(a.getAttribute('href'))?'privacy':'terms');});});
 function toggleDrop(id,btn){const d=document.getElementById(id);const o=!d.classList.contains('open');d.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o){const f=d.querySelector('input');setTimeout(()=>{d.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}}
 function openSub(e){e.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth'});const d=document.getElementById('subDrop');if(!d.classList.contains('open')){toggleDrop('subDrop',document.getElementById('subBtn'));}}
 let Q=1;function qty(n){Q=Math.min(99,Math.max(1,Q+n));document.getElementById('qtyN').textContent=Q;document.getElementById('qtyTotal').textContent='$'+(500*Q).toLocaleString()+'/month';}
